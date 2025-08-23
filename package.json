@@ -1,0 +1,30 @@
+{
+  "name": "kivy.js",
+  "version": "1.0.0",
+  "description": "Kivy-inspired JavaScript framework for building interactive UI widgets and layouts with behaviors.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "live-server examples",
+    "build": "echo \"No build step required\"",
+    "test": "echo \"No tests defined\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/kivy.js.git"
+  },
+  "keywords": [
+    "kivy",
+    "javascript",
+    "widgets",
+    "ui",
+    "behaviors",
+    "layouts",
+    "framework"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

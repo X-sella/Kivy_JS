@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kivy.js - Hello World</title>
+  <script src="../kivy.js"></script>
+</head>
+<body>
+  <script type="module">
+    import { App } from "../core/app.js";
+    import { Label } from "../widgets/label.js";
+    import { Button } from "../widgets/button.js";
+    import { BoxLayout } from "../layouts/boxlayout.js";
+
+    class HelloWorldApp extends App {
+      build() {
+        const layout = new BoxLayout({ orientation: "vertical", spacing: 10 });
+        const lbl = new Label({ text: "Hello, Kivy.js!", style: "font-size:20px;" });
+        const btn = new Button({ text: "Click Me" });
+
+        btn.on("click", () => lbl.setText("Button Clicked!"));
+
+        layout.addWidget(lbl);
+        layout.addWidget(btn);
+        return layout;
+      }
+    }
+
+    new HelloWorldApp().run();
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kivy.js - Login Form</title>
+  <script src="../kivy.js"></script>
+</head>
+<body>
+  <script type="module">
+    import { App } from "../core/app.js";
+    import { Label } from "../widgets/label.js";
+    import { TextInput } from "../widgets/textinput.js";
+    import { Button } from "../widgets/button.js";
+    import { BoxLayout } from "../layouts/boxlayout.js";
+
+    class LoginApp extends App {
+      build() {
+        const layout = new BoxLayout({ orientation: "vertical", spacing: 8 });
+        const userInput = new TextInput({ placeholder: "Username" });
+        const passInput = new TextInput({ placeholder: "Password", password: true });
+        const msg = new Label({ text: "" });
+        const btn = new Button({ text: "Login" });
+
+        btn.on("click", () => msg.setText(`Welcome, ${userInput.getValue()}!`));
+
+        layout.addWidget(userInput);
+        layout.addWidget(passInput);
+        layout.addWidget(btn);
+        layout.addWidget(msg);
+        return layout;
+      }
+    }
+
+    new LoginApp().run();
+  </script>
+</body>
+</html>

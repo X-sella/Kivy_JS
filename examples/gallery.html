@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kivy.js - Gallery</title>
+  <script src="../kivy.js"></script>
+</head>
+<body>
+  <script type="module">
+    import { App } from "../core/app.js";
+    import { Image } from "../widgets/image.js";
+    import { ScrollView } from "../widgets/scrollview.js";
+    import { BoxLayout } from "../layouts/boxlayout.js";
+
+    class GalleryApp extends App {
+      build() {
+        const layout = new BoxLayout({ orientation: "horizontal", spacing: 10 });
+        const images = [
+          "https://placekitten.com/200/200",
+          "https://placekitten.com/210/210",
+          "https://placekitten.com/220/220"
+        ];
+
+        images.forEach(src => {
+          const img = new Image({ source: src, size: [200, 200] });
+          layout.addWidget(img);
+        });
+
+        const scroll = new ScrollView();
+        scroll.addWidget(layout);
+        return scroll;
+      }
+    }
+
+    new GalleryApp().run();
+  </script>
+</body>
+</html>
