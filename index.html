@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kivy.js Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Kivy.js Framework Demo</h1>
+  <p>If you see "Hello from Kivy.js!" below, the framework is working 🎉</p>
+
+  <!-- Load your framework -->
+  <script src="kivy.js"></script>
+  <script>
+    // Run a basic Kivy.js app
+    const app = new Kivy.App({
+      onStart: () => {
+        const w1 = new Kivy.Widget("First widget");
+        w1.attach();
+
+        const w2 = new Kivy.Widget("Second widget");
+        w2.attach();
+      }
+    });
+    app.run();
+  </script>
+</body>
+</html>
